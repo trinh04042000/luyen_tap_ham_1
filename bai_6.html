@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Dictionary</h2>
+<input type="text" id="txtValue"/>
+<input type="button" id="btnAdd" value="Seach" onclick="add_element_to_array();"/>
+<input type="button" id="btnDisplay" value="Trans" onclick="trans();"/>
+
+<div id="result"></div>
+<script>
+    var vnArr = ['meo', 'cho', 'nguoi'];
+    var enArr = ['cat','dog','people'];
+    var x = 0;
+    var array = Array();
+
+    function add_element_to_array() {
+        array[x] = document.getElementById("txtValue").value;
+        alert( array[x]);
+        x++;
+        document.getElementById("txtValue ").value = "";
+    }
+
+    function trans() {
+        var keySeach = document.getElementById('txtValue').value;
+        console.log(keySeach);
+        var indexOfWord = -1;
+        for (var i = 0; i < vnArr.length; i++) {
+            if(vnArr[i] == keySeach) {
+                indexOfWord = i;
+            }
+        }
+        if(indexOfWord>-1){
+            alert(enArr[indexOfWord])
+        }else{
+            alert('tu nay ko co trong mang')
+        }
+    }
+
+</script>
+</body>
+</html>
